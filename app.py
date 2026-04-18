@@ -85,7 +85,7 @@ if user_input:
             
             with open("out.mp3", "rb") as f:
                 b64 = base64.b64encode(f.read()).decode()
-                st.markdown(f'<audio autoplay="true" src="data:audio/mp3;base64,{b64}">', unsafe_url_provided=True)
+                st.markdown(f'<audio autoplay="true" src="data:audio/mp3;base64,{b64}">', unsafe_allow_html=True)
                 
         except Exception as e:
             st.error(f"Titan encountered a system error: {str(e)}")
