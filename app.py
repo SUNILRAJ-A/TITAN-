@@ -59,8 +59,6 @@ st.set_page_config(page_title="TITAN AI", page_icon="⚡")
 st.title("TITAN: The Quad-Core Parent")
 
 # --- API KEY MAPPING ---
-# This maps your Streamlit Secrets to the system environment
-try:
     # --- API KEY MAPPING (Strong Version) ---
 try:
     # This manually injects the keys into the environment
