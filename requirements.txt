@@ -1,0 +1,5 @@
+streamlit
+litellm
+edge-tts
+google-generativeai
+python-dotenv
