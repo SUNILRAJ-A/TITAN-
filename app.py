@@ -61,12 +61,16 @@ st.title("TITAN: The Quad-Core Parent")
 # --- API KEY MAPPING ---
 # This maps your Streamlit Secrets to the system environment
 try:
+    # --- API KEY MAPPING (Strong Version) ---
+try:
+    # This manually injects the keys into the environment
+    os.environ["GOOGLE_API_KEY"] = st.secrets["GEMINI_API_KEY"] 
     os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
     os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
     os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
     os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
-except Exception:
-    st.error("Missing Keys! Ensure all 4 keys are in your Streamlit Secrets.")
+except Exception as e:
+    st.error(f"Secret Error: {e}")
     st.stop()
 
 user_input = st.chat_input("Command Titan...")
